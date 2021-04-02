@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提交留言板</title>
+</head>
+<body>
+    <textarea name="text" id="text" cols="80" rows="10"></textarea>
+    <button class="post">点击发布</button>
+    <div class="list">
+    </div>
+
+    <script>
+       //你的代码
+       
+       let text = document.getElementById('text');
+       let post = document.getElementsByClassName('post')[0];
+       let list = document.getElementsByClassName('list')[0];
+       post.onclick = function(){
+            let ul = document.createElement('ul');
+            let li = document.createElement('li');
+            li.innerHTML = text.value;
+            ul.appendChild(li);
+            list.appendChild(ul);
+            text.value = '';
+       }
+    </script>
+</body>
+</html>

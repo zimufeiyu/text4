@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页</title>
+    <style>
+        .button{
+            border: 1px;
+            border-color: aliceblue;
+            background-color: bisque;
+            height: 5%;
+            width: 8%;
+            
+        }
+        .position{
+            align-items: center;
+            text-align: center;
+            margin: 0px auto;
+            
+        }
+        .text1{
+            background-color: cyan;
+            width: auto;
+            height: 500px;
+        }
+        .insert{
+            width: 20px;
+            height: 0px;
+            border: 1px;
+            background-color: darkmagenta;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="position">
+        <textarea name="text" id="text" cols="20" rows="1";></textarea>
+        <span> 
+            <button id="left_In" class="button">左侧入</button>
+            <button id="right_In" class="button">右侧入</button>
+            <button id="left_Out" class="button">左侧出</button>
+            <button id="right_out" class="button">右侧出</button>
+            <button id="again" class="button">重新排序</button>
+            <button id="clear" class="button">清空</button>
+            <button id="random" class="button">随机生成</button>
+        </span>
+        <div class="text1"><div class="insert" id="insert"></div></div>
+    </div>
+    <script>
+        let left_In = document.getElementById('left_In');
+        let right_In = document.getElementById('right_In');
+        let left_Out = document.getElementById('left_Out');
+        let right_out = document.getElementById('right_out');
+        let again = document.getElementById('again');
+        let clear = document.getElementById('clear');
+        let random = document.getElementById('random');
+        let text = document.getElementById('text');
+        let insert = document.getElementsByClassName('insert')[0];
+        left_In.onclick = function(){
+            if (text.value>=10 & text.value <= 100){
+                a = text.value;
+                a = Number(a);
+                a = a*10;
+                span = document.getElementById('insert');
+                span.style.height = '${apx}';
+                console.log(span.style.height);
+            }
+            else{
+                alert("请输入10-100");
+            }
+        }
+        right_In.onclick = function(){
+            if (text.value>=10 & text.value <= 100){
+                a = text.value*10 ;
+                span = document.getElementsByTagName('span')[0];
+                span.style.height="a px";
+            }
+            else{
+                alert("请输入10-100");
+            }
+        }
+    </script>
+</body>
+</html>
